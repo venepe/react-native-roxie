@@ -5,7 +5,7 @@ import {
   View,
   WebView,
  } from 'react-native';
-import NavigationBar from 'react-native-navbar';
+import WRNavigationBar from '../WRNavigationBar';
 import styles from './styles';
 
 export default class Tutorial extends Component {
@@ -34,16 +34,17 @@ export default class Tutorial extends Component {
     const navigator = this.props.navigator;
     return (
       <View style={styles.container}>
-        <NavigationBar
-          title={{ title: 'Tutorial', tintColor: '#F5F5F5' }}
-          tintColor="#000D11"
-          statusBar={{ style: 'light-content' }}
+        <WRNavigationBar
+          title={'Tutorial'}
           leftButton={{
             title: 'Back',
             handler: () => {
               navigator.pop();
             },
-            tintColor: '#F5F5F5',
+          }}
+          rightButton={{
+            title: '',
+            handler: null,
           }}
         />
         <WebView

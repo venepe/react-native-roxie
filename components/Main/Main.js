@@ -9,7 +9,6 @@ import {
   View,
 } from 'react-native';
 
-import NavigationBar from 'react-native-navbar';
 import BleManager from 'react-native-ble-manager';
 import MusicControl from 'react-native-music-control';
 import base64 from 'base-64';
@@ -21,6 +20,7 @@ import Display from '../Display';
 import SongList from '../SongList';
 import Scanner from '../Scanner';
 import Intro from '../Intro';
+import WRNavigationBar from '../WRNavigationBar';
 import { getBluetoothConnection, isBluetoothConnected, getActiveSong } from '../../reducers';
 import { setSongs, emitVibe, isConnected, updateElapsedTime, resetBluetooth } from '../../actions';
 import { getIndexFromPercent, sortByTitle } from '../../utilities';
@@ -161,7 +161,10 @@ class Main extends Component {
   }
 
   getNowPlayingButton() {
-    let rightButton;
+    let rightButton = {
+      title: '',
+      handler: null,
+    };
     if (this.props.activeSong.uri) {
       rightButton = {
         title: 'Now Playing',
@@ -267,16 +270,13 @@ class Main extends Component {
     const title = this.state.isBluetoothConnected === true ? 'Disconnect' : 'Connect';
     return (
       <View style={styles.container}>
-        <NavigationBar
-          title={{ title: 'Roxie', tintColor: '#F5F5F5' }}
-          tintColor="#000D11"
-          statusBar={{ style: 'light-content' }}
+        <WRNavigationBar
+          title="Roxie"
           leftButton={{
             title,
             handler: () => {
               this.toggleBluetooth();
             },
-            tintColor: '#F5F5F5',
           }}
           rightButton={this.getNowPlayingButton()}
         />
