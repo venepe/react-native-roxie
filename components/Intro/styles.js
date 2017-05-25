@@ -7,8 +7,14 @@ export default StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  iconContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
   infoContainer: {
     alignItems: 'center',
+    margin: 10,
   },
   icon: {
     padding: 5,

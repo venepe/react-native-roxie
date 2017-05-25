@@ -10,7 +10,7 @@ import {
   View,
 } from 'react-native';
 
-import Icon from 'react-native-vector-icons/MaterialIcons';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import Tutorial from '../Tutorial';
 import styles from './styles';
 
@@ -41,7 +41,11 @@ export default class Intro extends Component {
     return (
       <View style={styles.container}>
         <TouchableOpacity style={styles.infoContainer} onPress={() => this.handler()}>
-          <Icon name="sentiment-very-dissatisfied" size={70} color="#FF8A80" style={styles.icon} />
+          <View style={styles.iconContainer}>
+            <Icon name="itunes" size={70} color="#FF8A80" style={styles.icon} />
+            <Icon name="bluetooth" size={70} color="#FF8A80" style={styles.icon} />
+            <Icon name="code-braces" size={70} color="#FF8A80" style={styles.icon} />
+          </View>
           <Text style={styles.text}>Add your favorite tunes and build new experiences</Text>
         </TouchableOpacity>
       </View>
