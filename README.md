@@ -1,6 +1,8 @@
 # react-native-roxie
 Connect your music library to the devices around you.
 
+![roxie](https://cloud.githubusercontent.com/assets/13398476/26768877/729fc65c-4970-11e7-87e7-5174f197284b.gif)
+
 ## Purpose
 Because it's not enough to just listen to your music, you need to experience it.  Connect your favorite tunes to a smart light and enjoy a show.  Using an Arduino, control your irrigation system and watch it dance.  All you need is a song in mind and a bluetooth device.
 
